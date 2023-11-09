@@ -9,7 +9,7 @@
             <span class="slogan">MONGO CLASS</span>
         </a> 
             <div class="d-flex center">
-                <span class="car"><span class="name">David</span><i class="fa-solid fa-user pointer"></i></span>
+                <span class="car"><span class="name">Grupo #2</span><i class="fa-solid fa-user pointer"></i></span>
                 <span class="car"><i class="fa-solid fa-bell pointer"></i></span>
                 <shopCar/>
                 <button class="btn btn-outline-danger mx-2">
