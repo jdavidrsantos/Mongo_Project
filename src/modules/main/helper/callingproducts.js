@@ -13,8 +13,5 @@ const getTodoItems = async () => {
 };
 
 
-
-
-
 export default getTodoItems
 

@@ -5,8 +5,6 @@ export const removeProduct = (state, id) => {
     state.carShop = removed
 }
 
-
-
 export const setCarProduct = (state, item) => {
     // state.totalCarShop.totalAllProducts = item.quantity * item.price
     const product = state.carShop.find(products => products.id === item.id)

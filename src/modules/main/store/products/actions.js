@@ -12,8 +12,6 @@ export const loadproducts = async ({ commit }) => {
     commit('Uploadproduct', products)
 }
 
-
-
 export const incrementRandomInt = async ({ commit }) => {
     commit('setLoading', true)
     const randomInt = await getRandomInt()

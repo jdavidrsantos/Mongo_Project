@@ -3,7 +3,7 @@
       <img class="img-responsive center-block" :src="productDetails" alt="products"/>
   </div>
 </template>
-  
+
   <script>
   import { defineAsyncComponent } from 'vue'
   import { mapGetters } from 'vuex';
@@ -14,7 +14,7 @@ export default {
                 productDetails: ''
             }
         },
- 
+
 
     props:{
         //Obtengo desde el router el id mediante props
@@ -30,7 +30,7 @@ export default {
         },//End created
 
   mounted(){
-    this.loadproducts()
+    // this.loadproducts()
     console.log('call mounted')
     this.filterId()
 
@@ -62,17 +62,17 @@ export default {
         },
 
 
-        
+
         watch: {
              ids(){
               this.filterId()
-             },  
+             },
 
         } //End watch
 
   } //End Export Default
   </script>
-  
+
 
 
   <style lang="scss" scoped>

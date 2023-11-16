@@ -7,7 +7,7 @@ let data = [
 ]
 
 const deletingproductsAPI = () => {
-    fetch('http://localhost:3000/api/deletingproductsAPI', {
+    fetch('http://localhost:3110/api/delete_products_mongo/', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -17,7 +17,7 @@ const deletingproductsAPI = () => {
     })
         .then(result => result.json())
         .then(response => {
-            if (response.deletedAll !== true) {
+            if (response.deleted !== true) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
@@ -31,9 +31,7 @@ const deletingproductsAPI = () => {
                 })
             }
         })
-
 };
-
 
 export default deletingproductsAPI
 

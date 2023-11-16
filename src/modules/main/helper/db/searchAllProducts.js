@@ -2,9 +2,9 @@ let datos = []
 
 let searchAllProducts = async () => {
 
-    await fetch('http://localhost:3000/api/searchAllProducts',
+    await fetch('http://localhost:3110/api/search_products_mongo/',
         {
-            method: 'POST',
+            method: 'GET',
             body: JSON.stringify(),
             headers: {
                 'Accept': 'application/json',
@@ -14,11 +14,10 @@ let searchAllProducts = async () => {
     )
         .then(async (result) => result.json())
         .then(response => {
-            datos = response.searchAllProducts
+            datos = response
         })
     return datos
 };
-
 
 export default searchAllProducts
 

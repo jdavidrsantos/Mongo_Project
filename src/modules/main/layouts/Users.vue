@@ -2,11 +2,8 @@
 <template>
 
 <div class="container-fluid g-0">
-
-<!--    <button id="addingProductAPI" @click="addingProductAPI">Import SQL</button>-->
-<!--    <button id="deletingProductAPI" @click="deletingProductAPI">Delete all SQL</button>-->
-
-
+    <button id="addingProductAPI" @click="addingProductAPI">Send data to Mongo</button>
+    <button id="deletingProductAPI" @click="deletingProductAPI">Deleting all products Mongo</button>
     <div class="row">
              <Navbar></Navbar>
     </div>
@@ -54,20 +51,17 @@ export default {
 },
 
  created (){
-    this.cargar
+     // this.upload()
   },
 
 methods: {
-
     addingProductAPI(){
        importSQL()
     },
-
     deletingProductAPI(){
         deletingproductsAPI()
     },
-
-    showRB(){
+   showRB(){
         $('#RSB').removeClass('RSB')
         $('#RSB').addClass('RSBshow')
         this.minimized.rightSide=false
@@ -83,7 +77,7 @@ methods: {
     //      this.$store.commit('products/Uploadproduct')
     //             },
 
-        //  ...mapActions('products',{loadproducts: 'loadproducts' }),
+         // ...mapActions('products',{loadproducts: 'loadproducts' }),
 
     minimizeRBEmit(){
         $('#RSB').addClass('RSB')

@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
     <div class="d-flex justify-content-center">
-      <h1 class="align-self-center">Loading articles</h1>
+      <h1 class="align-self-center">Loading products</h1>
     </div>
    <Fab/>
   

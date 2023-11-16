@@ -88,9 +88,9 @@ export default {
          },
         
 mounted(){
-     this.loadproducts()
-    // addingproductsAPI()
-    //  this.searchAllProducts()
+      this.loadproducts()
+     // addingproductsAPI()
+      this.searchAllProducts()
    },
 
    components:{

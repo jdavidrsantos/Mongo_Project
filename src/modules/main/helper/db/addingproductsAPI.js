@@ -1,61 +1,56 @@
 import axios from "axios";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 const addingproductsAPI = async () => {
-
-    const BASE_URL = 'https://fakestoreapi.com/products/';
-    let data = []
+    console.log('addingproductsAPI');
+    const BASE_URL = 'https://fakestoreapi.com/products';
 
     const itemsAPI = async () => {
         try {
-            const response = await axios.get(`${BASE_URL}`);
-            data = response.data;
-        } catch (errors) {
-            console.error(errors);
+            const response = await axios.get(BASE_URL);
+            return response.data; // Return the data
+        } catch (error) {
+            console.error(error);
+            return [];
         }
-    }
+    };
 
+    try {
+        const data = await itemsAPI();
+        console.log('data', data);
 
-    itemsAPI()
-    if (data = []) {
-        setTimeout(() => {
-            fetch('http://localhost:3000/api/datosAPI', {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            })
-                .then(result => result.json())
-                .then(response => {
-                    if (response.added == false) {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'Something went wrong!',
-                        })
-                    } else {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Sucessfully added',
-                            text: 'Products were added',
-                        })
+        if (data.length !== 0) {
+            console.log('tiene datos');
+            try {
+                const response = await axios.post('http://localhost:3110/api/add_products_mongo/', data, {
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
                     }
-                })
-        }, 3000)
+                });
 
-    } else {
-        console.log('tiene datos')
+                if (response.data.added === false) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Successfully added',
+                        text: 'Products were added',
+                    });
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        } else {
+            console.log('no tiene datos');
+        }
+    } catch (error) {
+        console.error(error);
     }
-
 };
 
-
-export default addingproductsAPI
-
-
-
-
-
-
+export default addingproductsAPI;
