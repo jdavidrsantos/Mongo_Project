@@ -22,7 +22,7 @@ const addingproductsAPI = async () => {
         if (data.length !== 0) {
             console.log('tiene datos');
             try {
-                const response = await axios.post('http://localhost:3110/api/add_products_mongo/', data, {
+                const response = await axios.post('https://infocenter-g9lg.onrender.com/api/add_products_mongo/', data, {
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
