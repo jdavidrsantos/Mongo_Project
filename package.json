@@ -12,6 +12,7 @@
     "better-select": "^0.0.1",
     "bootstrap": "^5.2.3",
     "core-js": "^3.8.3",
+    "mongodb": "^6.3.0",
     "sweetalert2": "^11.4.8",
     "vue": "^3.2.13",
     "vue-axios": "^3.5.2",
